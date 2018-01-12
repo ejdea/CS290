@@ -1,0 +1,4 @@
+http://flip3.engr.oregonstate.edu:34516/
+
+https://github.com/ejdea/OSU-CS290
+https://github.com/ejdea/OSU-CS290.git
