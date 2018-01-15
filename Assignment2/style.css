@@ -1,0 +1,18 @@
+.outer-content {
+    left: 0;
+    width: 75%;
+    height: 50px;
+    margin-top: 20px;
+    background: #FFC0CB;
+    display: flex;
+
+    /* Reference - https://www.w3schools.com/css/css3_flexbox.asp */
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-content {
+    width: 75%;
+    background: #ADD8E6;
+    text-align: center;
+}
