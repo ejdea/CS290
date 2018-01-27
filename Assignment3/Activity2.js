@@ -13,7 +13,7 @@ average(3, 5, 7);
 function average(num1, num2, num3)
 {
 	console.log("The average of " +  num1 + ", " + num2 + ", and " + num3 +
-	" is " + (num1 + num2 + num3)/3 + '.');
+	            " is " + (num1 + num2 + num3)/3 + '.');
 }
 
 // Assign the min function to a variable
@@ -27,14 +27,6 @@ var min = function(num1, num2)
 		console.log("min(" + num1 + ", " + num2 + ") = " + num2);
 }
 
-// Call getMin BEFORE it is assigned to min. This results in an error.
-getMin(10,12);
-
-// Assign getMin to min
-var getMin = min;
-
-/*
-// Alternatively, handle the exception the print the error msg
 try
 {
 	getMin(10,12);
@@ -42,13 +34,17 @@ try
 catch(err)
 {
 	console.log("Called getMin BEFORE it is assigned to min. " +
-	"This results in the following error:\n   > " + err.message);
+				"This results in the following exception:\n   > " + err);
 }
+
+/*
+// Call getMin BEFORE it is assigned to min. This results in an error.
+getMin(10,12);
+
+// Assign getMin to min
+var getMin = min;
+*/
 
 // Assign getMin to min
 var getMin = min;
 
-// Call getMin AFTER it is assigned to min
-console.log("Called getMin AFTER it is assigned to min.");
-getMin(10,12);
-*/
