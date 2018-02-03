@@ -14,22 +14,23 @@ function Automobile( year, make, model, type ) {
     this.make = make; //string (ex. Honda, Ford)
     this.model = model; //string (ex. Accord, Focus)
     this.type = type; //string (ex. Pickup, SUV)
-	this.logMe = function(printAll) {
-		if (printAll)
-		{
-			console.log(this.year + ' ' + 
-						this.make + ' ' + 
-						this.model + ' ' + 
-						this.type);
-		}
-		else
-		{
-			console.log(this.year + ' ' + 
-						this.make + ' ' + 
-						this.model);
-		}
-	};
 }
+
+Automobile.prototype.logMe = function(printAll) {
+	if (printAll)
+	{
+		console.log(this.year + ' ' + 
+					this.make + ' ' + 
+					this.model + ' ' + 
+					this.type);
+	}
+	else
+	{
+		console.log(this.year + ' ' + 
+					this.make + ' ' + 
+					this.model);
+	}
+};
 
 var automobiles = [ 
     new Automobile(1995, "Honda", "Accord", "Sedan"),
