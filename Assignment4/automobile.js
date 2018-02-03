@@ -22,7 +22,7 @@ var automobiles = [
     new Automobile(2005, "Lotus", "Elise", "Roadster"),
     new Automobile(2008, "Subaru", "Outback", "Wagon")
     ];
-
+	
 /* This function sorts arrays using an arbitrary comparator. You pass it a 
  * comparator and an array of objects appropriate for that comparator and it 
  * will return a new array which is sorted with the largest object in index 0 
@@ -30,9 +30,11 @@ var automobiles = [
  */
 function sortArr(comparator, array)
 {
-    return array.forEach(function() {
-		var obj1 = 
-	});	
+    var tempArr = array.sort(function(val1, val2) {
+		return comparator(val1, val2);
+	});
+		
+	return tempArr;
 }
 
 /* A comparator takes two arguments and uses some algorithm to compare them. 
@@ -41,7 +43,14 @@ function sortArr(comparator, array)
  */
 function exComparator(int1, int2)
 {
-    return int1 > int2;
+    if (int1 > int2)
+	{
+        return true;
+    }
+	else
+	{
+        return false;
+    }
 }
 
 /* For all comparators if cars are 'tied' according to the comparison rules 
@@ -54,17 +63,17 @@ function exComparator(int1, int2)
  */
 function yearComparator(auto1, auto2)
 {
-	console.log("[yearComparator] enter " + auto2.year + " / " + (typeof auto2.year) + " " + (typeof auto2.year === "number"));
-	
-	if (typeof auto1.year === "number" && typeof auto2.year === "number")
+	if (auto1.year === auto2.year)
 	{
-		console.log(auto1.year + " > " + auto2.year + " = " + (auto1.year > auto2.year));
-		return auto1.year > auto2.year;
+		return 0;
+	}
+	else if (auto1.year > auto2.year)
+	{
+		return -1;
 	}
 	else
 	{
-		console.log("[yearComparator] exit");
-		return false;
+		return 1;
 	}
 }
 
@@ -73,13 +82,17 @@ function yearComparator(auto1, auto2)
  * are "greater" than ones that come later.*/
 function makeComparator(auto1, auto2)
 {
-	if (typeof auto1.year === "string" && typeof auto2.year === "string")
+	if (auto1.make === auto2.make)
 	{
-		return auto1.make > auto2.make;
+		return 0;
+	}
+	else if (auto1.make > auto2.make)
+	{
+		return 1;
 	}
 	else
 	{
-		return false;
+		return -1;
 	}
 }
 
@@ -90,13 +103,59 @@ function makeComparator(auto1, auto2)
  */
 function typeComparator(auto1, auto2)
 {
-    if (typeof auto1.type === "string" && typeof auto2.type === "string")
+	var carTypes = [];
+	var carList = [auto1, auto2];
+	const carType = {
+		ROADSTER : 0,
+		PICKUP   : 1,
+		SUV      : 2,
+		WAGON    : 3,
+		OTHER    : 4,
+	};
+	
+	// If two cars are of equal type then the newest one 
+	// by model year should be considered "greater".
+	if (auto1.type === auto2.type)
 	{
-		return auto1.type > auto2.type;
+		return yearComparator(auto1, auto2);
 	}
 	else
 	{
-		return false;
+		// Convert Automobile type (string) to CarType
+		for (let i = 0; i < carList.length; i++)
+		{
+			switch (carList[i].type)
+			{
+				case "Roadster":
+					carTypes.push(carType.ROADSTER);
+					break;
+				case "Pickup":
+					carTypes.push(carType.PICKUP);
+					break;
+				case "SUV":
+					carTypes.push(carType.SUV);
+					break;
+				case "Wagon":
+					carTypes.push(carType.WAGON);
+					break;
+				default:
+					carTypes.push(carType.OTHER);
+					break;
+			}
+		}
+	}
+		
+    if (carTypes[0] === carTypes[1])
+	{
+		return 0;
+	}
+	else if (carTypes[0] > carTypes[1])
+	{
+		return 1;
+	}
+	else
+	{
+		return -1;
 	}
 }
 
@@ -132,3 +191,5 @@ As an example of the content in the parenthesis:
 1990 Ford F-150 */
 
 console.log(sortArr(yearComparator, automobiles));
+console.log(sortArr(makeComparator, automobiles));
+console.log(sortArr(typeComparator, automobiles));
