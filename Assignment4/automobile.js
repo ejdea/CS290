@@ -7,11 +7,28 @@
 * Filename:   automobile.js
 ******************************************************************************/
 
+var USE_BUBBLE_SORT = false;
+
 function Automobile( year, make, model, type ) {
     this.year = year; //integer (ex. 2001, 1995)
     this.make = make; //string (ex. Honda, Ford)
     this.model = model; //string (ex. Accord, Focus)
     this.type = type; //string (ex. Pickup, SUV)
+	this.logMe = function(printAll) {
+		if (printAll)
+		{
+			console.log(this.year + ' ' + 
+						this.make + ' ' + 
+						this.model + ' ' + 
+						this.type);
+		}
+		else
+		{
+			console.log(this.year + ' ' + 
+						this.make + ' ' + 
+						this.model);
+		}
+	};
 }
 
 var automobiles = [ 
@@ -30,11 +47,31 @@ var automobiles = [
  */
 function sortArr(comparator, array)
 {
-    var tempArr = array.sort(function(val1, val2) {
-		return comparator(val1, val2);
-	});
-		
-	return tempArr;
+	var tempArray = array;
+	
+	if (USE_BUBBLE_SORT)
+	{
+		for (let i = 0; i < tempArray.length; i++)
+		{
+			for (let j = 0; j < (tempArray.length - i - 1); j++)
+			{
+				if (comparator(tempArray[j], tempArray[j + 1]))
+				{
+					let tmp = tempArray[j + 1];
+					tempArray[j + 1] = tempArray[j];
+					tempArray[j] = tmp;
+				}
+			}
+		}
+	}
+	else
+	{
+		var tempArray = array.sort(function(val1, val2) {
+			return comparator(val1, val2);
+		});
+	}
+    		
+	return tempArray;
 }
 
 /* A comparator takes two arguments and uses some algorithm to compare them. 
@@ -63,17 +100,31 @@ function exComparator(int1, int2)
  */
 function yearComparator(auto1, auto2)
 {
-	if (auto1.year === auto2.year)
+	if (USE_BUBBLE_SORT)
 	{
-		return 0;
-	}
-	else if (auto1.year > auto2.year)
-	{
-		return -1;
+		if (auto1.year < auto2.year)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	else
 	{
-		return 1;
+		if (auto1.year === auto2.year)
+		{
+			return 0;
+		}
+		else if (auto1.year < auto2.year)
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
 	}
 }
 
@@ -82,17 +133,31 @@ function yearComparator(auto1, auto2)
  * are "greater" than ones that come later.*/
 function makeComparator(auto1, auto2)
 {
-	if (auto1.make === auto2.make)
+	if (USE_BUBBLE_SORT)
 	{
-		return 0;
-	}
-	else if (auto1.make > auto2.make)
-	{
-		return 1;
+		if (auto1.make > auto2.make)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	else
 	{
-		return -1;
+		if (auto1.make === auto2.make)
+		{
+			return 0;
+		}
+		else if (auto1.make > auto2.make)
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
 	}
 }
 
@@ -113,7 +178,7 @@ function typeComparator(auto1, auto2)
 		OTHER    : 4,
 	};
 	
-	// If two cars are of equal type then the newest one 
+	// If two cars are of equal type, then the newest one 
 	// by model year should be considered "greater".
 	if (auto1.type === auto2.type)
 	{
@@ -144,18 +209,32 @@ function typeComparator(auto1, auto2)
 			}
 		}
 	}
-		
-    if (carTypes[0] === carTypes[1])
+	
+	if (USE_BUBBLE_SORT)
 	{
-		return 0;
-	}
-	else if (carTypes[0] > carTypes[1])
-	{
-		return 1;
+		if (carTypes[0] > carTypes[1])
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	else
 	{
-		return -1;
+		if (carTypes[0] === carTypes[1])
+		{
+			return 0;
+		}
+		else if (carTypes[0] > carTypes[1])
+		{
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
 	}
 }
 
@@ -163,33 +242,55 @@ function typeComparator(auto1, auto2)
  * opening and closing 5 stars. All values in parenthesis should be replaced 
  * with appropriate values. Each line is a separate call to console.log.
 
-Each line representing a car should be produced via a logMe function. This 
-function should be added to the Automobile class and accept a single boolean 
-argument. If the argument is 'true' then it prints "year make model type" with 
-the year, make, model and type being the values appropriate for the automobile. 
-If the argument is 'false' then the type is omitted and just the 
-"year make model" is logged.
+ * Each line representing a car should be produced via a logMe function. This 
+ * function should be added to the Automobile class and accept a single boolean 
+ * argument. If the argument is 'true' then it prints "year make model type" with 
+ * the year, make, model and type being the values appropriate for the automobile. 
+ * If the argument is 'false' then the type is omitted and just the 
+ * "year make model" is logged.
+ */
 
-*****
-The cars sorted by year are:
-(year make model of the 'greatest' car)
-(...)
-(year make model of the 'least' car)
+/*
+ * The cars sorted by year are:
+ * (year make model of the 'greatest' car)
+ * (...)
+ * (year make model of the 'least' car)
+ */
+console.log("*****\nThe cars sorted by year are:");
 
-The cars sorted by make are:
-(year make model of the 'greatest' car)
-(...)
-(year make model of the 'least' car)
+var arr1 = sortArr(yearComparator, automobiles);
 
-The cars sorted by type are:
-(year make model type of the 'greatest' car)
-(...)
-(year make model type of the 'least' car)
-*****
+arr1.forEach(function(element) { element.logMe(false); });
 
-As an example of the content in the parenthesis:
-1990 Ford F-150 */
+console.log("");
+ 
+/* The cars sorted by make are:
+ * (year make model of the 'greatest' car)
+ * (...)
+ * (year make model of the 'least' car)
+ */
+console.log("The cars sorted by make are:");
 
-console.log(sortArr(yearComparator, automobiles));
-console.log(sortArr(makeComparator, automobiles));
-console.log(sortArr(typeComparator, automobiles));
+var arr2 = sortArr(makeComparator, automobiles);
+
+arr2.forEach(function(element) { element.logMe(false); });
+
+console.log("");
+ 
+/* The cars sorted by type are:
+ * (year make model type of the 'greatest' car)
+ * (...)
+ * (year make model type of the 'least' car)
+ */
+console.log("The cars sorted by type are:");
+
+var arr3 = sortArr(typeComparator, automobiles);
+
+arr3.forEach(function(element) { element.logMe(true); });
+
+console.log("*****");
+ 
+/*
+ * As an example of the content in the parenthesis:
+ * 1990 Ford F-150
+ */
