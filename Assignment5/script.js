@@ -14,7 +14,6 @@ function createTable(data) {
     // Create table
     var table1 = document.createElement("table");
     table1.setAttribute("id", "table1");
-    table1.style.border = "black";
     document.body.appendChild(table1);
 
     // Create table head row
@@ -36,7 +35,13 @@ function createTable(data) {
         for (var j = 0; j < data[i].length; j++) {
             var td = document.createElement("td");
             td.setAttribute("id", "td-" + i + ',' + j);
-            td.textContent = data[i][j];
+
+            var td_div = document.createElement("div");
+            td_div.setAttribute("id", "td_div-" + i + ',' + j);
+            td_div.style.bottom = "0";
+            td_div.textContent = data[i][j];
+            td.appendChild(td_div);
+
             tr.appendChild(td);
         }
 
@@ -110,8 +115,8 @@ function createButtons(numRow, numCol) {
     document.body.insertBefore(markCellButton, table1);
 
     // Set initial data cell state
-    var currTd = cells[position_row][position_col];
-    currTd.style.border = "2px solid blue";
+    var currTd_div = cells[position_row][position_col].childNodes[0];
+    currTd_div.style.border = "3px solid #239B56";
 
     function selectCell(direction) {
         var prevRow = position_row;
@@ -149,12 +154,12 @@ function createButtons(numRow, numCol) {
 
         if (validDir) {
             // Remove highlight in previous cell
-            var prevTd = cells[prevRow][prevCol];
-            prevTd.style.border = "1px solid #cccccc";
+            var prevTd_div = cells[prevRow][prevCol].childNodes[0];
+            prevTd_div.style.border = "3px solid transparent";
 
             // Get current data cell
-            var currTd = cells[position_row][position_col];
-            currTd.style.border = "2px solid blue";
+            var currTd_div = cells[position_row][position_col].childNodes[0];
+            currTd_div.style.border = "3px solid #239B56";
         }
     }
 
@@ -168,7 +173,6 @@ var data = [
     ["1, 1", "1, 2", "1, 3", "1, 4"],
     ["2, 1", "2, 2", "2, 3", "2, 4"],
     ["3, 1", "3, 2", "3, 3", "3, 4"],
-    ["4, 1", "4, 2", "4, 3", "4, 4"],
 ];
 
 createTable(data);
