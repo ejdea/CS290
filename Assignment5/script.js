@@ -77,7 +77,7 @@ function createButtons(numRow, numCol) {
     buttonTypes.forEach(function(direction) {
         var button = document.createElement("button");
         button.textContent = direction;
-        button.style.width = "55px";
+        button.style.width = "80px";
         button.addEventListener("click", function() { selectCell(direction); });
         document.body.insertBefore(button, table1);
     });
@@ -110,7 +110,7 @@ function createButtons(numRow, numCol) {
     // Create mark cell button
     var markCellButton = document.createElement("button");
     markCellButton.textContent = "Mark Cell";
-    markCellButton.style.width = "81px";
+    markCellButton.style.width = "85px";
     markCellButton.addEventListener("click", function() { markCellButton_Click(); });
     document.body.insertBefore(markCellButton, table1);
 
