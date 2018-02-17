@@ -1,0 +1,68 @@
+/******************************************************************************
+* Author:     Edmund Dea
+* Student Id: 933280343
+* Date:       2/17/17
+* Class:      CS290
+* Title:      Week 6 - HW Assignment: AJAX Interactions
+* Filename:   style.css
+******************************************************************************/
+
+body
+{
+    background: url("nature_wallpaper.jpg") no-repeat fixed;
+    background-size: 100%;
+}
+
+.openWeatherApiBox
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90px;
+    width: 400px;    
+    border-radius: 15px;
+
+    /* Reference: https://stackoverflow.com/questions/7565384/how-to-make-the-background-div-only-transparent-using-css */
+    background: rgba(255,255,255,0.8);
+
+    /* Reference: https://www.w3schools.com/css/css3_2dtransforms.asp */
+    transform: translate(-50%, -50%);
+}
+
+.openWeatherApiBanner
+{
+    position: absolute;
+    height: 50px;
+    width: 350px;
+    top: 5px;
+    left: calc(50% - calc(350px/2));
+}
+
+.openWeatherApiForm
+{
+    position: relative;
+    top: 50px;
+    border: 0;
+}
+
+#form1_loc
+{
+    border: 0;
+    margin: 0;
+    width: 200px;
+    border-bottom: 1px solid black;
+    background: transparent;
+}
+
+.openWeatherApiForm_fieldset
+{
+    border: 0;
+}
+
+#form1_submit
+{
+    float: right;
+    background: #F5B041;
+    box-shadow: none;
+    border-radius: 8px;
+}

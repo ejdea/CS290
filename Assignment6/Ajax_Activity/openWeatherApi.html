@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var req = new XMLHttpRequest();
+      req.open("GET", "http://api.openweathermap.org/data/2.5/weather?zip=94118&appid=371b39cee585f67b5e36261e668c3c5a", false);
+      req.send(null);
+      console.log(JSON.parse(req.responseText));
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
