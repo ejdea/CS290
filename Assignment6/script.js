@@ -66,13 +66,25 @@ function displayData(data, tableName, reportName, boxName)
 {
 	var report = document.getElementById(reportName);
 	var boxName = document.getElementById(boxName);
-	boxName.style.height = "370px";
-	boxName.style.width = "800px";
-
-	var table1check = document.getElementById(tableName);
+	
+	var table1check = document.getElementById("table1");
 	if (table1check != null) {
 		table1check.parentNode.removeChild(table1check);
+		var boxName1 = document.getElementById("openWeatherApi");
+		boxName1.style.height = "90px";
+		boxName1.style.width = "500px";
 	}
+
+	var table2check = document.getElementById("table2");
+	if (table2check != null) {
+		table2check.parentNode.removeChild(table2check);
+		var boxName2 = document.getElementById("httpBinBoxApi");
+		boxName2.style.height = "130px";
+		boxName2.style.width = "500px";
+	}
+
+	boxName.style.height = "370px";
+	boxName.style.width = "800px";
 
 	// Create table
 	var table1 = document.createElement("table");
