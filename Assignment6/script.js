@@ -24,13 +24,13 @@ document.getElementById("form1_submit").addEventListener("click", function(event
 		apiLoc = "q=" + location.value;
 	}
 
-	var req = new XMLHttpRequest;
+	var req = new XMLHttpRequest();
 	var url = apiUrl + apiLoc + '&' + apiUnits + '&' + apiKey;	
 	req.open("GET", url, true);
 	req.addEventListener("load", function() {
 		if (req.status >= 200 && req.status < 400) {
 			var response = JSON.parse(req.responseText);
-			displayWeather(response);
+			displayData(response, "table1", "weatherReport", "openWeatherApi");
 		} else {
 			alert("City/Zip Code not found. Please try again.");
 			console.log("Error in network request: ", req.statusText);
@@ -40,23 +40,43 @@ document.getElementById("form1_submit").addEventListener("click", function(event
 	event.preventDefault();
 });
 
-function displayWeather(data)
-{
-	var weatherReport = document.getElementById("weatherReport");
-	var openWeatherApi = document.getElementById("openWeatherApi");
-	var form1_loc = document.getElementById("form1_loc");
-	openWeatherApi.style.height = "370px";
-	openWeatherApi.style.width = "800px";
-	form1_loc.style.width = "600px";
+document.getElementById("form2_submit").addEventListener("click", function(event) {
+	var req = new XMLHttpRequest();
+	var payload = { name: null, age: null, hero: null, url : null };
+	payload.name = document.getElementById("form2_name").value;
+	payload.age = document.getElementById("form2_age").value;
+	payload.hero = document.getElementById("form2_hero").value;
+	payload.url = "http://www.marvel.com";
+	req.open("POST", "http://httpbin.org/post", true);
+	req.setRequestHeader("Content-Type", "application/json");
+	req.addEventListener("load", function() {
+		if (req.status >= 200 && req.status < 400) {
+			var response = JSON.parse(req.responseText);
+			displayData(response, "table2", "httpBinReport", "httpBinBoxApi");
+		} else {
+			alert("Error in network request: " + req.statusText);
+			console.log("Error in network request: " + req.statusText);
+		}
+	});
+	req.send(JSON.stringify(payload));
+	event.preventDefault();
+});
 
-	var table1check = document.getElementById("table1");
+function displayData(data, tableName, reportName, boxName)
+{
+	var report = document.getElementById(reportName);
+	var boxName = document.getElementById(boxName);
+	boxName.style.height = "370px";
+	boxName.style.width = "800px";
+
+	var table1check = document.getElementById(tableName);
 	if (table1check != null) {
 		table1check.parentNode.removeChild(table1check);
 	}
 
 	// Create table
 	var table1 = document.createElement("table");
-	table1.setAttribute("id", "table1");
+	table1.setAttribute("id", tableName);
 	
 	var tr = document.createElement("tr");
 	for (var key in data)
@@ -109,5 +129,5 @@ function displayWeather(data)
 		table1.appendChild(tr);
 	}
 
-	weatherReport.appendChild(table1);
+	report.appendChild(table1);
 }

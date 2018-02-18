@@ -16,7 +16,7 @@ body
 .openWeatherApiBox
 {
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 50%;
     height: 90px;
     width: 500px;    
@@ -26,7 +26,7 @@ body
     background: rgba(255,255,255,0.8);
 
     /* Reference: https://www.w3schools.com/css/css3_2dtransforms.asp */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -5%);
 }
 
 .openWeatherApiBanner
@@ -46,13 +46,32 @@ body
     font-family: Arial;
 }
 
-#form1_loc
+input[type="text"]
 {
-    border: 0;
     margin: 0;
-    width: 300px;
+    border: 0;
     border-bottom: 1px solid black;
     background: transparent;
+}
+
+#form1_loc
+{
+    width: 300px;
+}
+
+#form2_name
+{
+    width: 300px;
+}
+
+#form2_age
+{
+    width: 312px;
+}
+
+#form2_hero
+{
+    width: 215px;
 }
 
 fieldset
@@ -60,7 +79,7 @@ fieldset
     border: 0;
 }
 
-#form1_submit
+input[type="submit"]
 {
     float: right;
     background: #F5B041;
@@ -74,4 +93,26 @@ fieldset
     font-family: Arial;
     top: 50px;
     left: 15px;
+}
+
+.httpBinBox
+{
+    position: absolute;
+    padding-top: 10px;
+    top: 75%;
+    left: 50%;
+    height: 130px;
+    width: 500px;    
+    border-radius: 15px;
+
+    /* Reference: https://stackoverflow.com/questions/7565384/how-to-make-the-background-div-only-transparent-using-css */
+    background: rgba(255,255,255,0.8);
+
+    /* Reference: https://www.w3schools.com/css/css3_2dtransforms.asp */
+    transform: translate(-50%, -75%);
+}
+
+#httpBinReport
+{
+    margin-left: 10px;
 }

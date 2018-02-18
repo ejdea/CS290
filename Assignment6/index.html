@@ -31,11 +31,22 @@ Description:    CS290 Assignment 6
 			<div id="weatherReport"></div>
 		</div>
 
-		<div>
-			<form class="openWeatherApiForm">
+		<div class="httpBinBox" id="httpBinBoxApi">
+			<form>
 				<fieldset>
+					<div class="div_name">Name:
+						<input type="text" name="name" id="form2_name">
+					</div><br/>
+					<div class="div_age">Age:
+						<input type="text" name="age" id="form2_age">
+					</div><br/>
+					<div class="div_hero">Favorite Superhero:
+						<input type="text" name="hero" id="form2_hero">
+					</div>
+					<input type="submit" name="submitButton2" id="form2_submit">
 				</fieldset>
 			</form>
+			<div id="httpBinReport"></div>
 		</div>
 
 		<script src="script.js"></script>
