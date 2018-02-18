@@ -9,7 +9,7 @@
 
 body
 {
-    background: url("nature_wallpaper.jpg") no-repeat fixed;
+    background: url("nature_wallpaper.jpg") no-repeat center center fixed;
     background-size: 100%;
 }
 
@@ -19,7 +19,7 @@ body
     top: 50%;
     left: 50%;
     height: 90px;
-    width: 400px;    
+    width: 500px;    
     border-radius: 15px;
 
     /* Reference: https://stackoverflow.com/questions/7565384/how-to-make-the-background-div-only-transparent-using-css */
@@ -43,18 +43,19 @@ body
     position: relative;
     top: 50px;
     border: 0;
+    font-family: Arial;
 }
 
 #form1_loc
 {
     border: 0;
     margin: 0;
-    width: 200px;
+    width: 300px;
     border-bottom: 1px solid black;
     background: transparent;
 }
 
-.openWeatherApiForm_fieldset
+fieldset
 {
     border: 0;
 }
@@ -65,4 +66,12 @@ body
     background: #F5B041;
     box-shadow: none;
     border-radius: 8px;
+}
+
+#weatherReport
+{
+    position: relative;
+    font-family: Arial;
+    top: 50px;
+    left: 15px;
 }
