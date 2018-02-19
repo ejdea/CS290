@@ -19,9 +19,9 @@ document.getElementById("form1_submit").addEventListener("click", function(event
 	var regexZipCode = new RegExp('[0-9]{5}$');
 
 	if (regexZipCode.test(location.value)) {
-		apiLoc = "zip=" + location.value;
+		apiLoc = "zip=" + location.value + ",us";
 	} else {
-		apiLoc = "q=" + location.value;
+		apiLoc = "q=" + location.value + ",us";
 	}
 
 	var req = new XMLHttpRequest();
