@@ -21,16 +21,13 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="menubar">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="navbar-brand">ED</div>
-        </div>
         <ul class="nav navbar-nav pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="active"><a class="navbar-anchor" href="index.html">Home</a></li>
+          <li><a class="navbar-anchor" href="projects.html">Projects</a></li>
+          <li><a class="navbar-anchor" href="about.html">About</a></li>
+          <li><a class="navbar-anchor" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -42,7 +39,7 @@
         <li data-target="#carouselIndicator" data-slide-to="2"></li>
       </ol>
 
-      <div class="carousel-inner">
+      <div class="carousel-inner" id="carouselInnerId">
         <div class="item active"></div>
         <div class="item"></div>
         <div class="item"></div>
@@ -75,5 +72,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

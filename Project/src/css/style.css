@@ -44,7 +44,7 @@ body,
     width: 8px;
 }
 
-/* Reference - https://codepen.io/Rowno/pen/Afykb */
+/* Reference: https://codepen.io/Rowno/pen/Afykb */
 .carousel-fade
 {
     .carousel-inner
@@ -80,30 +80,14 @@ body,
     }
 }
 
-/*
-.img1
-{
-    background-image: url("../resources/circuit.jpg");
-}
-
-.img2
-{
-    background-image: url("../resources/1.jpg");
-}
-
-.img3
-{
-    background-image: url("../resources/2a.jpg");
-}*/
-
 .item:nth-child(1)
 {
-    background-image: url("../resources/circuit.jpg");
+    background-image: url("../resources/1.jpg");
 }
 
 .item:nth-child(2)
 {
-    background-image: url("../resources/1.jpg");
+    background-image: url("../resources/circuit.jpg");
 }
 
 .item:nth-child(3)
@@ -113,19 +97,21 @@ body,
 
 .navbar
 {
-   position: absolute;
+   position: fixed;
    z-index: 999999999;
+   top: 0;
    background-color: transparent;
    border-color: transparent;
-   min-width: 100%;
+   width: 100%;
    font-weight: bold;
+   transition: top 0.2s ease-in-out;
 }
 
 .navbar-nav li
 {
     border-radius: 12px;
     margin-right: 5px;
-    font-family: sans-serif;
+    font-family: sans-serif, Helvetica, Arial, "Times New Roman", Times;
 }
 
 .navbar-default .navbar-nav > .active > a,
