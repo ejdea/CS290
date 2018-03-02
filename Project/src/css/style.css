@@ -51,31 +51,17 @@ body,
     {
         .item
         {
-            
-            transition-property: opacity;
+            transition: background 1s;
+            background-color: #000;
+            z-index: 99999;
         }
 
-        .item,
-        .active.left,
-        .active.right
+        .active
         {
-            opacity: 0;
-        }
-
-        .active,
-        .next.left,
-        .prev.right
-        {
-            opacity: 1;
-        }
-
-        .next,
-        .prev,
-        .active.left,
-        .active.right
-        {
-            left: 0;
             transform: translate3d(0, 0, 0);
+            z-index: 9999999;
+            background: #000;
+            
         }
     }
 }
@@ -135,4 +121,16 @@ body,
 .navbar-default .navbar-nav > li > a:hover
 {
     color: peachpuff;
+}
+
+.img-brand
+{
+    /* Banner labelled for noncommercial reuse with modification
+     * https://commons.wikimedia.org/wiki/File:EPrix_logo.svg
+     */
+    background-image: url("../resources/E_logo.png");
+    background-size: 100% 100%;
+    height: 50px;
+    width: 120px;
+    padding: 2px 2px 2px 2px;
 }
