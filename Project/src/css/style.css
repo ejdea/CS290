@@ -1,0 +1,152 @@
+/******************************************************************************
+* Author:     Edmund Dea
+* Student Id: 933280343
+* Date:       3/1/17
+* Class:      CS290
+* Title:      Final Project
+* Filename:   style.css
+******************************************************************************/
+
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+    height: 95%;
+    min-width: 100%;
+}
+
+.carousel-inner .item
+{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin-right: 5px;
+    right: 5px;
+    left: inherit;
+    height: 25%;
+    width: 15px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+    margin-right: 5px;
+}
+
+.carousel-indicators li, 
+.carousel-indicators li.active {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    height: 20px;
+    width: 8px;
+}
+
+/* Reference - https://codepen.io/Rowno/pen/Afykb */
+.carousel-fade
+{
+    .carousel-inner
+    {
+        .item
+        {
+            
+            transition-property: opacity;
+        }
+
+        .item,
+        .active.left,
+        .active.right
+        {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right
+        {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right
+        {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+/*
+.img1
+{
+    background-image: url("../resources/circuit.jpg");
+}
+
+.img2
+{
+    background-image: url("../resources/1.jpg");
+}
+
+.img3
+{
+    background-image: url("../resources/2a.jpg");
+}*/
+
+.item:nth-child(1)
+{
+    background-image: url("../resources/circuit.jpg");
+}
+
+.item:nth-child(2)
+{
+    background-image: url("../resources/1.jpg");
+}
+
+.item:nth-child(3)
+{
+    background-image: url("../resources/2a.jpg");
+}
+
+.navbar
+{
+   position: absolute;
+   z-index: 999999999;
+   background-color: transparent;
+   border-color: transparent;
+   min-width: 100%;
+   font-weight: bold;
+}
+
+.navbar-nav li
+{
+    border-radius: 12px;
+    margin-right: 5px;
+    font-family: sans-serif;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus
+{
+    color: coral;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a:hover
+{
+    color: peachpuff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+{
+    color: peachpuff;
+}
