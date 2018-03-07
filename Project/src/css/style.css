@@ -7,13 +7,151 @@
 * Filename:   style.css
 ******************************************************************************/
 
-html,
-body,
-.carousel,
-.carousel-inner,
-.carousel-inner .item {
-    height: 95%;
-    min-width: 100%;
+body
+{
+	background: url("../resources/background.jpg");
+	background-attachment: inherit;
+    background-position: unset;
+    background-repeat: repeat;
+    background-size: inherit;
+}
+
+.bar
+{
+	border-radius: 3px;
+	background: #3e4444;
+	height: 3px;
+	width: 100px;
+	margin: 8px;
+}
+
+.container-body
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-body-header
+{
+	background-color: transparent;/*#bc5152;*/
+	color: #3e4444;
+	border-radius: 10px;
+	width: 80%;
+	height: 40px;
+	font-size: 2em;
+	font-weight: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Mina", "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.bg
+{
+	margin: 0 0 20px 20px;
+	color: #3e4444;
+}
+
+.bg-img-div
+{
+	min-width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-img-src
+{
+	height: 80px;
+	width: 100px;
+}
+
+.bg-img-src2
+{
+	height: 100px;
+	width: 80px;
+}
+
+.bg-img-src3
+{
+	height: 100px;
+	width: 100px;
+}
+
+.bg-img-text
+{
+	font-size: 9px;
+	font-weight: bold;
+	text-align: center;
+	color: #db9833;
+	font-family: sans-serif;
+}
+
+.bg-title
+{
+	color: #82b74b;
+	font-weight:bold;
+	font-size: larger;
+	font-family: "Work+Sans", "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.bg-company
+{
+	color: #2a6592;
+	font-weight:bold;
+	font-size: larger;
+	font-family: "Muli", "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.bg-description
+{
+	font-size: 1em;
+	font-weight: normal;
+	text-align: left;
+	color: #ca8722;
+	font-family: sans-serif;
+}
+
+/* Reference:
+ * https://css-tricks.com/slide-in-as-you-scroll-down-boxes/
+ */
+.fly-in-row
+{
+	display: inherit;
+	transform: translateY(2160px);
+	animation: fly-in-row 1s ease forwards;
+}
+
+.fly-in-row:nth-child(odd)
+{
+	animation-duration: 0.8s;
+}
+
+/* Reference: 
+ * https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp 
+ */
+@keyframes fly-in-row
+{
+	to { transform: translateY(0); }
+}
+
+.row-body
+{
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+html
+{
+	margin-bottom: calc(100vw - 100vw);
+}
+
+/********** Carousel Overrides **********/
+
+.carousel .carousel-inner .item {
+	height: 100vh; /* Viewport height */
+	min-width: 100vh;
 }
 
 .carousel-inner .item
@@ -36,33 +174,35 @@ body,
     margin-right: 5px;
 }
 
-.carousel-indicators li, 
+.carousel-indicators li,
 .carousel-indicators li.active {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    height: 20px;
+    height: 25px;
     width: 8px;
 }
 
-/* Reference: https://codepen.io/Rowno/pen/Afykb */
-.carousel-fade
+/* Reference: https://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide */
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right
 {
-    .carousel-inner
-    {
-        .item
-        {
-            transition: background 1s;
-            background-color: #000;
-            z-index: 99999;
-        }
+	transition: opacity 1s;
+    opacity: 0;
+}
 
-        .active
-        {
-            transform: translate3d(0, 0, 0);
-            z-index: 9999999;
-            background: #000;            
-        }
-    }
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .next.right
+{
+	opacity: 1;
+}
+
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right
+{
+	/* Use GPU acceleration for better transition effect performance */
+    transform: translate3d(0, 0, 0);
 }
 
 .item:nth-child(1)
@@ -79,6 +219,8 @@ body,
 {
     background-image: url("../resources/2a.jpg");
 }
+
+/********** NavBar Overrides **********/
 
 .navbar
 {
@@ -145,13 +287,14 @@ body,
 .navbar-nav li
 {
     margin-right: 5px;
-    font-family: sans-serif, Helvetica, Arial, "Times New Roman", Times;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-size: 120%;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus
 {
-    color: coral;
+    color: #ca8722;
     background-color: transparent;
 }
 
@@ -169,4 +312,10 @@ body,
 .navbar-default .navbar-nav > li > a:hover
 {
     color: peachpuff;
+}
+
+/********** Well Overrides **********/
+.well1
+{
+	margin: 20px;
 }
