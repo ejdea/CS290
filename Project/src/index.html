@@ -16,7 +16,7 @@
 
     <title>Edmund Dea | Introduction</title>
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mina|Ubuntu|Muli|Work+Sans" rel="stylesheet">
   </head>
@@ -35,31 +35,55 @@
         </ul>
       </div>
     </nav>
-
-    <div class="carousel slide carousel-fade" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselIndicator" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselIndicator" data-slide-to="1"></li>
-        <li data-target="#carouselIndicator" data-slide-to="2"></li>
-      </ol>
-
-      <div class="carousel-inner" id="carouselInnerId">
-        <div class="item active">
-            <div class="carousel-text1">Software Engineer | Student</div>
-            <div class="carousel-text2">Edmund Dea</div>
-        </div>
-        <div class="item">
-            <div class="carousel-text1">Software Engineer | Student</div>
-            <div class="carousel-text2">Edmund Dea</div>
-        </div>
-        <div class="item">
-            <div class="carousel-text1">Software Engineer | Student</div>
-            <div class="carousel-text2">Edmund Dea</div>
-        </div>
+<!--
+    <div class="carousel-container" id="carousel-container">
+      <div class="carousel-slide carousel-fade">
+        <img src="resources/1.jpg" />
       </div>
+      <div class="carousel-slide carousel-fade">
+        <img src="resources/chip.jpg" />
+      </div>
+      <div class="carousel-slide carousel-fade">
+        <img src="resources/2a.jpg" />
+      </div>
+
+      <div class="carousel-text">
+        <div class="carousel-text1">Software Engineer | Student</div>
+        <div class="carousel-text2">Edmund Dea</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <span class="indicator" onclick="loadSlide(1)">a</span> 
+      <span class="indicator" onclick="loadSlide(2)">b</span> 
+      <span class="indicator" onclick="loadSlide(3)">c</span> 
     </div>
-    
-    <br />
+-->
+
+    <div class="carousel-container" id="carousel-container">
+        <div class="carousel-indicator-group">
+          <div class="carousel-indicator" onclick="clickSlide(1)"></div>
+          <div class="carousel-indicator" onclick="clickSlide(2)"></div>
+          <div class="carousel-indicator" onclick="clickSlide(3)"></div>
+        </div>
+        
+        <div class="carousel-slide carousel-fade">
+          <div class="carousel-img img1"></div>
+          <div class="carousel-text1">Software Engineer | Student</div>
+          <div class="carousel-text2">Edmund Dea</div>
+        </div>
+
+        <div class="carousel-slide carousel-fade">
+          <div class="carousel-img img2"></div>
+          <div class="carousel-text3">Caption Two</div>
+        </div>
+
+        <div class="carousel-slide carousel-fade">
+          <div class="carousel-img img3"></div>
+          <div class="carousel-text3">Caption Three</div>
+        </div>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -100,7 +124,9 @@
         <div class="col-md-2"></div>
           <div class="col-md-8 container-body">
             <div class="bg-img-div">
-              <!-- Image Reference: https://01.org/linuxgraphics -->
+              <!-- Image Reference:
+                   https://01.org/linuxgraphics
+              -->
               <img class="bg-img-src" src="resources/Win10_IoTCore_Logo.png" />
             </div>
             <div class="bg">
@@ -122,7 +148,9 @@
         <div class="col-md-2"></div>
           <div class="col-md-8 container-body">
             <div class="bg-img-div">
-              <!-- Image Reference: http://maxpixel.freegreatpicture.com/Error-Debugging-Windows-Computer-Microsoft-Bug-152803 -->
+              <!-- Image Reference:
+                   http://maxpixel.freegreatpicture.com/Error-Debugging-Windows-Computer-Microsoft-Bug-152803
+              -->
               <img class="bg-img-src" src="resources/bug.png" />
             </div>
             <div class="bg">
@@ -144,8 +172,10 @@
         <div class="col-md-2"></div>
           <div class="col-md-8 container-body">
             <div class="bg-img-div">
-              <!-- Image Reference: https://www.microsoft.com 
-                   http://www.andtech.co.za/tsc-are-windows-10-certified -->
+              <!-- Image Reference:
+                   https://www.microsoft.com 
+                   http://www.andtech.co.za/tsc-are-windows-10-certified
+              -->
               <img class="bg-img-src2" src="resources/WHQL_Win7.png" />
             </div>
             <div class="bg">
@@ -167,7 +197,9 @@
         <div class="col-md-2"></div>
           <div class="col-md-8 container-body">
             <div class="bg-img-div">
-              <!-- Image Reference: https://www.franklintempleton.com/ -->
+              <!-- Image Reference:
+                   https://www.franklintempleton.com/
+              -->
               <img class="bg-img-src3" src="resources/franklin-templeton-investments_416x416.png" />
             </div>
             <div class="bg">
@@ -220,14 +252,14 @@
 
             This is an issue with a Chrome extension. This issue is not reproducible in Microsoft Edge and other browsers.
           -->
-          <div class="embed-responsive embed-responsive-16by9 video-1">
+          <!--<div class="embed-responsive embed-responsive-16by9 video-1">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xvmVTFQBFsw?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
-          </div>
+          </div>-->
         </div>
         <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9 video-1">
+          <!--<div class="embed-responsive embed-responsive-16by9 video-1">
              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7rK7j3tymT4?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -236,7 +268,7 @@
     <br/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

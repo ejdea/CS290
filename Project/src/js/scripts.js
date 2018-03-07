@@ -35,9 +35,9 @@ function verticallyShiftElement(shift_px)
 
 	var menubar = document.getElementById("menubar");
 	var menubar_anchor_elements = document.getElementsByClassName("navbar-anchor");
-	var carouselInner = document.getElementById("carouselInnerId");
+	var carouselContainer = document.getElementById("carousel-container");
 	
-	if (st > menubar.offsetHeight && st < carouselInner.offsetHeight) {
+	if (st > menubar.offsetHeight && st < carouselContainer.offsetHeight) {
 		if (st > lastScrollTop) {
 			$('nav').removeClass('navbar-down1').addClass('navbar-up');
 			menubar.style.setProperty("top", menubar.clientHeight * -2 + "px");
@@ -45,7 +45,7 @@ function verticallyShiftElement(shift_px)
 			$('nav').removeClass('navbar-down2').removeClass('navbar-up').addClass('navbar-down1');
 			menubar.style.setProperty("top", "0px");
 		}
-	} else if (st > carouselInner.offsetHeight) {
+	} else if (st > carouselContainer.offsetHeight) {
 		if (st > lastScrollTop) {
 			$('nav').removeClass('navbar-down1').addClass('navbar-up');
 			menubar.style.setProperty("top", menubar.clientHeight * -2 + "px");
@@ -68,7 +68,7 @@ setInterval(function() {
 		if (flyInRowCount < flyInRowMax)
 			flyRowIn();
 	}
-}, 250);
+}, 100);
 
 window.addEventListener("scroll", function() {
 	isScrollEvent = 1;
@@ -115,3 +115,48 @@ function flyRowIn() {
 /****************************************
 *              Carousel                 *
 ****************************************/
+
+/* Reference: 
+ * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
+ */
+var slideIndex = 1;
+var interval = 4000;
+var maxSlides = document.getElementsByClassName("carousel-slide").length;
+var slideIntervalFunc = setInterval(slideInterval, interval);
+
+function clickSlide(i) {
+	// Set next slide
+	slideIndex = i;
+
+	// Display next slide
+	displaySlide();
+
+	// Reset slide interval
+	clearInterval(slideIntervalFunc);
+	slideIntervalFunc = setInterval(slideInterval, interval);
+}
+
+function displaySlide() {
+	var slides = document.getElementsByClassName("carousel-slide");
+	var indicator = document.getElementsByClassName("carousel-indicator");
+
+	// Reset slideshow and validate input
+	if (slideIndex < 0 || slideIndex > maxSlides) {
+		slideIndex = 1;
+	}
+
+	// Hide all slides from the display
+	for (var i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+
+	// Display the current slide
+	slides[slideIndex-1].style.display = "block";
+}
+
+function slideInterval() {
+	displaySlide(slideIndex);
+	slideIndex++;
+}
+
+displaySlide(slideIndex);
