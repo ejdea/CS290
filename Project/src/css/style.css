@@ -142,11 +142,6 @@ body
 	filter: alpha(opacity=0);
 }
 
-html
-{
-	margin-bottom: calc(100vw - 100vw);
-}
-
 /********** Carousel Overrides **********/
 
 .carousel .carousel-inner .item {
@@ -207,17 +202,51 @@ html
 
 .item:nth-child(1)
 {
+	/* Reference: 
+	 * https://commons.wikimedia.org/wiki/File:Black-and-white-man-person-hands_(24243824281).jpg
+	 * Image labelled for noncommercial reuse
+	 */
     background-image: url("../resources/1.jpg");
 }
 
 .item:nth-child(2)
 {
-    background-image: url("../resources/circuit.jpg");
+	/* Reference: 
+	 * http://dodskypict.com/computer-wallpaper/computer-wallpaper-2/
+	 * Image labelled for noncommercial reuse
+	 */
+    background-image: url("../resources/chip.jpg");
 }
 
 .item:nth-child(3)
 {
+	/* Reference: 
+	 * https://www.flickr.com/photos/doxiehaus/6824168895
+	 * Image labelled for noncommercial reuse
+	 */
     background-image: url("../resources/2a.jpg");
+}
+
+.carousel-text1
+{
+	position: absolute;
+	font-weight: bold;
+	font-family: "Mina", "Ubuntu", "Muli", "Work+Sans", sans-serif;
+	font-size: 40px;
+	color: #fff;
+	top: 85vh;
+	left: 5vh;
+}
+
+.carousel-text2
+{
+	position: absolute;
+	font-weight: bold;
+	font-family: "Mina", "Ubuntu", "Muli", "Work+Sans", sans-serif;
+	font-size: 40px;
+	color: #fff;
+	top: 92vh;
+	left: 70vh;
 }
 
 /********** NavBar Overrides **********/
@@ -250,9 +279,9 @@ html
 {
     color: #555;
     top: 0px;
-    background-color: #fff;
-	opacity: 100;
-	filter: alpha(opacity=1.0);
+    background-color: #2a6592;
+	opacity: 94;
+	filter: alpha(opacity=0.94);
 	box-shadow: 0px 3px 3px rgba(85, 85, 85, 0.94);
 }
 
@@ -315,7 +344,22 @@ html
 }
 
 /********** Well Overrides **********/
-.well1
+
+.separator-1
 {
-	margin: 20px;
+	/* Reference: 
+	 * https://commons.wikimedia.org/wiki/File:Wallpaper-2751.jpg
+	 */
+	background: url("../resources/3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    min-width: 100vm;
+}
+
+.video-1
+{
+	width: 480px;
 }

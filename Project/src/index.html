@@ -44,9 +44,18 @@
       </ol>
 
       <div class="carousel-inner" id="carouselInnerId">
-        <div class="item active"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+        <div class="item active">
+            <div class="carousel-text1">Software Engineer | Student</div>
+            <div class="carousel-text2">Edmund Dea</div>
+        </div>
+        <div class="item">
+            <div class="carousel-text1">Software Engineer | Student</div>
+            <div class="carousel-text2">Edmund Dea</div>
+        </div>
+        <div class="item">
+            <div class="carousel-text1">Software Engineer | Student</div>
+            <div class="carousel-text2">Edmund Dea</div>
+        </div>
       </div>
     </div>
     
@@ -177,7 +186,54 @@
       </div>
     </div>
 
-    
+    <div class="separator-1"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 container-body">
+          <h2 class="container-body-header">
+            <div class="bar"></div>
+            Music Is My Passion
+            <div class="bar"></div>
+          </h2>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <div class="row" id="row6">
+        <div class="col-md-6">
+          <!-- 
+            Note that there is a known issue that says:
+              
+            Error parsing header X-XSS-Protection: 1; mode=block; 
+            report=https://www.google.com/appserve/security-bugs/log/youtube: 
+            insecure reporting URL for secure page at character position 22. 
+            The default protections will be applied.
+
+            https://bugs.chromium.org/p/chromium/issues/detail?id=807304
+          -->
+          <!--
+            Note that there is a Chrome extension issue that says:
+
+            Error in event handler for (unknown): TypeError: Cannot read property 'url' of null
+
+            This is an issue with a Chrome extension. This issue is not reproducible in Microsoft Edge and other browsers.
+          -->
+          <div class="embed-responsive embed-responsive-16by9 video-1">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xvmVTFQBFsw?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-16by9 video-1">
+             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7rK7j3tymT4?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

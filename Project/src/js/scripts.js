@@ -101,10 +101,17 @@ function flyRowIn() {
 
 	for (var i = 0; i < rowList.length; i++) {
 		var el = rowList[i];
-		if (el.id && isElementVisible(el) && !el.className.includes("fly-in-row")) {
+		
+		if (el.id && isElementVisible(el) && 
+			el.className.includes("row-body") && 
+			!el.className.includes("fly-in-row")) {
 			el.classList.remove("row-body");
 			el.classList.add("fly-in-row");
 			flyInRowCount++;
 		}
 	}
 }
+
+/****************************************
+*              Carousel                 *
+****************************************/
