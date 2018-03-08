@@ -194,3 +194,11 @@ function slideInterval() {
 }
 
 displaySlide(slideIndex);
+
+function downloadFile() {
+	/* Reference:
+	 * http://www.forrestchase.com.au/about-forrest-chase/funny-cat-pictures-016-001/
+	 * Labelled for noncommercial reuse
+	 */
+	window.location.href = "http://www.forrestchase.com.au/fcwp/wp-content/uploads/2015/04/funny-cat-pictures-016-001.jpg";
+}
