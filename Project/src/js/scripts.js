@@ -27,6 +27,7 @@ var flyInRowMax= 5;
  */
 function verticallyShiftElement(shift_px)
 {
+	var header;
 	var st = $(this).scrollTop();
 
 	/* If the user did not scroll down enough, quit early */
@@ -35,9 +36,25 @@ function verticallyShiftElement(shift_px)
 
 	var menubar = document.getElementById("menubar");
 	var menubar_anchor_elements = document.getElementsByClassName("navbar-anchor");
-	var carouselContainer = document.getElementById("carousel-container");
+
+	if (menubar == null || menubar == null || 
+		menubar_anchor_elements == undefined || menubar_anchor_elements == undefined) {
+		return;
+	}
+
+	// Select the correct header element based on the current webpage
+	header = document.getElementById("carousel-container");
+	if (header == null || header == undefined) {
+		header = document.getElementById("header-project");
+		if (header == null || header == undefined) {
+			header = document.getElementById("header-about");
+			if (header == null || header == undefined) {
+				header = document.getElementById("header-contact");
+			}
+		}
+	}
 	
-	if (st > menubar.offsetHeight && st < carouselContainer.offsetHeight) {
+	if (st > menubar.offsetHeight && st < header.offsetHeight) {
 		if (st > lastScrollTop) {
 			$('nav').removeClass('navbar-down1').addClass('navbar-up');
 			menubar.style.setProperty("top", menubar.clientHeight * -2 + "px");
@@ -45,7 +62,7 @@ function verticallyShiftElement(shift_px)
 			$('nav').removeClass('navbar-down2').removeClass('navbar-up').addClass('navbar-down1');
 			menubar.style.setProperty("top", "0px");
 		}
-	} else if (st > carouselContainer.offsetHeight) {
+	} else if (st > header.offsetHeight) {
 		if (st > lastScrollTop) {
 			$('nav').removeClass('navbar-down1').addClass('navbar-up');
 			menubar.style.setProperty("top", menubar.clientHeight * -2 + "px");
@@ -60,7 +77,7 @@ function verticallyShiftElement(shift_px)
 	lastScrollTop = st;
 }
 
-setInterval(function() {
+var carouselIntervalFunc = setInterval(function() {
 	if (isScrollEvent) {
 		isScrollEvent = 0;
 		verticallyShiftElement();
@@ -140,6 +157,13 @@ function displaySlide() {
 	var slides = document.getElementsByClassName("carousel-slide");
 	var indicator = document.getElementsByClassName("carousel-indicator");
 
+	// Verify carousel is loaded
+	if (slides == null || slides == undefined || 
+		indicator == null || indicator == undefined) {
+		console.log("undefined carousel");
+		return;
+	}
+
 	// Reset slideshow and validate input
 	if (slideIndex < 0 || slideIndex > maxSlides) {
 		slideIndex = 1;
@@ -151,10 +175,20 @@ function displaySlide() {
 	}
 
 	// Display the current slide
-	slides[slideIndex-1].style.display = "block";
+	if (slides[slideIndex-1] != null) {
+		slides[slideIndex-1].style.display = "block";
+	}
 }
 
 function slideInterval() {
+	var slides = document.getElementsByClassName("carousel-slide");
+	var indicator = document.getElementsByClassName("carousel-indicator");
+
+	// Verify carousel is loaded
+	if (!slides || !indicator) {
+		return;
+	}
+	
 	displaySlide(slideIndex);
 	slideIndex++;
 }

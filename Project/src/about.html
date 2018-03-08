@@ -1,10 +1,10 @@
 <!-----------------------------------------------------------------------------
-Author:     Edmund Dea
-Student Id: 933280343
-Date:       3/1/17
-Class:      CS290
-Title:      Final Project
-Filename:   style.css
+| Author:     Edmund Dea
+| Student Id: 933280343
+| Date:       3/1/17
+| Class:      CS290
+| Title:      Final Project
+| Filename:   style.css
 ------------------------------------------------------------------------------>
 
 <!doctype html>
@@ -16,64 +16,75 @@ Filename:   style.css
 
     <title>Edmund Dea | Introduction</title>
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Mina|Ubuntu|Muli|Work+Sans" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-down1" id="menubar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <div class="navbar-brand">ED</div>
+          <div class="navbar-brand img-brand"></div>
         </div>
         <ul class="nav navbar-nav pull-right">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li class="active"><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="active"><a class="navbar-anchor" href="index.html">Home</a></li>
+          <li><a class="navbar-anchor" href="projects.html">Projects</a></li>
+          <li><a class="navbar-anchor" href="about.html">About</a></li>
+          <li><a class="navbar-anchor" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <div id="carouselIndicator" class="carousel slide carousel-fade" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselIndicator" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselIndicator" data-slide-to="1"></li>
-        <li data-target="#carouselIndicator" data-slide-to="2"></li>
-      </ol>
+    <div class="header-about" id="header-about"></div>
 
-      <div class="carousel-inner">
-        <div class="item active"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 container-body">
+          <h2 class="container-body-header">
+            <div class="bar"></div>
+            About Me
+            <div class="bar"></div>
+          </h2>
+        </div>
       </div>
+
+      <div class="row center">
+        <div class="page-description center">
+          <p>I'm thankful to Jesus Christ for the new life I live because of what he did on the cross for me. I grew up in a unreligious household and was introduced to Christianity during my freshmen year at UC Davis. Several years after graduation, I started reading the bible and finally understood why Jesus went to the cross. There's more to my story but below are some of the reasons for this change.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 container-body">
+          <h2 class="container-body-header">
+            <div class="bar"></div>
+            Why I Believe God Exists
+            <div class="bar"></div>
+          </h2>
+        </div>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/NKGnXgH_CzE?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item video-1" src="http://www.youtube.com/embed/OxiAikEk2vU?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item video-1" src="http://www.youtube.com/embed/6CulBuMCLg0?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+      </div>
+
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item video-1" src="http://www.youtube.com/embed/EE76nwimuT0?modestbranding=1&autohide=1&showinfo=0&controls=0" allowFullscreen></iframe>
+      </div>
+
     </div>
 
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
-    <p class="jumbotron">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
