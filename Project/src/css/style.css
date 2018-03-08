@@ -412,46 +412,6 @@ body
 	padding: 5px 0 5px 0;
 }
 
-/********** Miscellaneous **********/
-
-.separator-1
-{
-	/* Reference:
-	 * https://commons.wikimedia.org/wiki/File:Wallpaper-2751.jpg
-	 */
-	background: url("../resources/3.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 250px;
-    min-width: 100vm;
-}
-
-.embed-responsive-16by9
-{
-	position: relative;
-	margin-bottom: 15px;
-}
-
-.center
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-
-.center-text
-{
-	text-align: center;
-}
-
-.fill-height
-{
-	height: 100%;
-}
-
 /********** Contact Page **********/
 
 .header-contact
@@ -464,7 +424,7 @@ body
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 50vh;
     min-width: 100vm;
 }
 
@@ -488,14 +448,15 @@ body
 .header-project
 {
 	/* Reference:
-	 * https://commons.wikimedia.org/wiki/File:Wallpaper-2751.jpg
+	 * http://chainimage.com/image/mobile-technology-xodis
+	 * License for noncommercial reuse
 	 */
-	background: url("../resources/3.jpg");
+	background: url("../resources/apps.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 50vh;
     min-width: 100vm;
 }
 
@@ -508,7 +469,7 @@ body
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40vh;
+    height: 50vh;
     min-width: 100vm;
 }
 
@@ -560,4 +521,55 @@ body
     left: 15px;
     margin: 15px 0 15px 0;
     color: #fff;
+}
+
+/********** Miscellaneous **********/
+
+.separator-1
+{
+	/* Reference:
+	 * https://commons.wikimedia.org/wiki/File:Wallpaper-2751.jpg
+	 */
+	background: url("../resources/3.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    min-width: 100vm;
+}
+
+.embed-responsive-16by9
+{
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.center
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.center-text
+{
+	text-align: center;
+}
+
+.fill-height
+{
+	height: 100%;
+}
+
+.scrollbox
+{
+	border: 1px solid #000;
+	height: 100px;
+	width: 300px;
+	margin: 15px 0 15px 0;
+	overflow: scroll;
+	display: flex;
+	justify-content: right;
 }
