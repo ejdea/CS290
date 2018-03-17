@@ -1,0 +1,60 @@
+<div class="workout">
+    <h1>Here is your workout for today!</h1>
+    <form class="workoutForm" id="form1" method="post" action="/">
+        <span>Name:
+          <input type="text" name="name" id="name">
+        </span>
+        <span>Reps:
+          <input type="text" name="reps" id="reps">
+        </span>
+        <span>Weight:
+          <input type="text" name="weight" id="weight">
+        </span>
+        <span>Date:
+          <input type="text" name="date" id="date">
+        </span>
+        <span>Lbs:
+          <input type="radio" name="lbs" id="radio_lbs" value="1">
+        </span>
+        <span>Kilos:
+          <input type="radio" name="lbs" id="radio_kilos" value="0">
+        </span>
+        <input type="submit" value="Add Item">
+    </form>
+    {{#if data}}
+    <table id="workout_table">
+        <tr>
+            <th>Name</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Date</th>
+            <th>Lbs</th>
+            <th>Options</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <input type="hidden" id="workout-id-{{this.id}}" value="{{this.id}}">
+            <td class="workout_td" id="workout-name-{{this.id}}">
+                {{this.name}}
+            </td>
+            <td class="workout_td" id="workout-reps-{{this.id}}">
+                {{this.reps}}
+            </td>
+            <td class="workout_td" id="workout-weight-{{this.id}}">
+                {{this.weight}}
+            </td>
+            <td class="workout_td" id="workout-date-{{this.id}}">
+                {{this.date}}
+            </td>
+            <td class="workout_td" id="workout-lbs-{{this.id}}">
+                {{this.lbs}}
+            </td>
+            <td class="td_button">
+                <button type="button" action="/" onclick="editRow(this, {{this.id}})">Edit</button>
+                <button type="button" action="/" onclick="deleteRow(this, {{this.id}})">Delete</button>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+    </div>

@@ -1,0 +1,55 @@
+<div class="workout">
+    <h1>Here is your workout for today!</h1>
+    <form class="workoutForm" id="form1" method="post" action="/additem">
+        <span>Name:
+          <input type="text" name="name" id="name">
+        </span>
+        <span>Reps:
+          <input type="text" name="reps" id="reps">
+        </span>
+        <span>Weight:
+          <input type="text" name="weight" id="weight">
+        </span>
+        <span>Date:
+          <input type="text" name="date" id="date">
+        </span>
+        <span>Lbs:
+          <input type="radio" name="lbs" id="radio_lbs" value="1">
+        </span>
+        <span>Kilos:
+          <input type="radio" name="lbs" id="radio_kilos" value="0">
+        </span>
+        <input type="submit" value="Add Item">
+    </form>
+    {{#if data}}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Date</th>
+            <th>Lbs</th>
+        </tr>
+        {{#each data}}
+        <tr>
+            <input type="hidden" id="workout_id" value="{{this.id}}">
+            <td class="workout_td" id="workout_name">
+                {{this.name}}
+            </td>
+            <td class="workout_td" id="workout_reps">
+                {{this.reps}}
+            </td>
+            <td class="workout_td" id="workout_weight">
+                {{this.weight}}
+            </td>
+            <td class="workout_td" id="workout_date">
+                {{this.date}}
+            </td>
+            <td class="workout_td" id="workout_lbs">
+                {{this.lbs}}
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+    </div>
