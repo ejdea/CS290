@@ -1,4 +1,4 @@
 # CS290
-Oregon State University
+OSU
 Web Development
 Winter 2018
